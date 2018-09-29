@@ -45,9 +45,9 @@ This repo shows how to use OpenVINO Docker Image on your local host
     
 到这里,本机就建好OpenVINO Docker的容器,接下来就可以用了<br><br>
 ## 启动OpenVINO Docker
-每次使用前,首先在host系统里启动一个console, 运行 `xhost +local:docker` （允许docker访问host端的display硬件,这样docker内运行workshop里有GUI的应用才能有显示）<br><br>
-运行`sudo docker container start openvino-2018r3`,启动前面创建好的容器<br><br>
-运行`sudo docker attach openvino-2018r3`,把当前console的STDIN/STDOUT挂载到容器上<br><br>
+每次使用前,首先在host系统里启动一个console, 运行 `$ xhost +local:docker` （允许docker访问host端的display硬件,这样docker内运行workshop里有GUI的应用才能有显示）<br><br>
+运行`$ sudo docker container start openvino-2018r3`,启动前面创建好的容器<br><br>
+运行$ `sudo docker attach openvino-2018r3`,把当前console的STDIN/STDOUT挂载到容器上<br><br>
 此时你就可以在这个Docker console里编译运行你的openvino程序了<br><br>
 
 
@@ -56,7 +56,7 @@ docker内无法运行VS code之类的代码编辑器GUI, 所以你需要在host�
 
 
 ## 退出OpenVINO Docker
-在当前console里运行`exit`,即可从Docker环境内退回到host的console<br>
+在当前console里运行`$ exit`,即可从Docker环境内退回到host的console<br>
 
 ### docker镜像的兼容性测试
 阿里云上的docker image在以下平台上做过测试,运行完好<br>
@@ -64,5 +64,5 @@ ubuntu 18.04 pass (kernel 4.15)<br>
 centos 7.5.1804 pass (kernel 3.10.0)<br>
 fedora 28 pass(kernel 4.18.9)<br>
 ubuntu 16.04.4 pass(kernel 4.13)<br><br>
-
-up2 dev kit with ubuntu 16.04.4 pass(kernel 4.13) 需要重新编译docker里openvino的sample, 因为Intel® Celeron™ N3350的CPU不支持AVX,docker里的openvino sample在编译时打开了支持avx的编译参数<br>
+UP2 dev kit with ubuntu 16.04.4 pass(kernel 4.13) <br><br>
+在UP2这类凌动处理器平台上使用OpenVINO docker镜像时,需要重新编译docker里openvino的sample, 因为Intel® Celeron™ N3350的CPU不支持AVX,docker里的openvino sample在编译时打开了支持avx的编译参数<br>
