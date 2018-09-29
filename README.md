@@ -30,6 +30,7 @@ This repo shows how to use OpenVINO Docker Image on your local host
     ```Bash
     $ sudo docker pull registry.cn-qingdao.aliyuncs.com/openvino/workshop:pure-r3_model-downloader
     ```
+    这时可以用`sudo docker image ls -a`来看导入的docker镜像的信息
 3. 创建本地容器<br>
 	```Bash
     $ sudo docker create --net=host --name openvino-2018r3 -it -e DISPLAY=$DISPLAY --device=/dev/dri/card0:/dev/dri/card0 --device=/dev/dri/renderD128:/dev/dri/renderD128 --privileged -v /dev:/dev -v /opt/intel/workshop:/opt/intel/workshop registry.cn-qingdao.aliyuncs.com/openvino/workshop:pure-r3_model-downloader
@@ -40,7 +41,7 @@ This repo shows how to use OpenVINO Docker Image on your local host
     &ensp;&ensp;&ensp;&ensp;-v <font color=#dd0000>/opt/intel/workshop:/opt/intel/workshop</font><br>
     &ensp;&ensp;&ensp;&ensp;将本地host机器目录/opt/intel/workshop挂载到容器内的/opt/intel/workshop目录上<br><br>
     &ensp;&ensp;&ensp;&ensp;<font color=#dd0000>registry.cn-qingdao.aliyuncs.com/openvino/workshop:pure-r3_model-downloader</font><br><br>
-    此为创建容器是基于的本地docker镜像的名字<br>
+    此为创建容器时基于的本地docker镜像的名字<br>
     
 到这里,本机就建好OpenVINO Docker的容器,接下来就可以用了<br><br>
 ## 启动OpenVINO Docker
@@ -56,3 +57,12 @@ docker内无法运行VS code之类的代码编辑器GUI, 所以你需要在host�
 
 ## 退出OpenVINO Docker
 在当前console里运行`exit`,即可从Docker环境内退回到host的console<br>
+
+### docker镜像的兼容性测试
+阿里云上的docker image在以下平台上做过测试,运行完好<br>
+ubuntu 18.04 pass (kernel 4.15)<br>
+centos 7.5.1804 pass (kernel 3.10.0)<br>
+fedora 28 pass(kernel 4.18.9)<br>
+ubuntu 16.04.4 pass(kernel 4.13)<br><br>
+
+up2 dev kit with ubuntu 16.04.4 pass(kernel 4.13) 需要重新编译docker里openvino的sample, 因为Intel® Celeron™ N3350的CPU不支持AVX,docker里的openvino sample在编译时打开了支持avx的编译参数<br>
