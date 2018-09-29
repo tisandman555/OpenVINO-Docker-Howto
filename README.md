@@ -26,7 +26,7 @@ This repo shows how to use OpenVINO Docker Image on your local host
     $ sudo docker load -i $IMG.tar
     ```
     
-    或者从阿里云上加载<br>
+    或者从阿里云上加载,此路径下的镜像内包含了OpenVINO 2018r3版本<br>
     ```Bash
     $ sudo docker pull registry.cn-qingdao.aliyuncs.com/openvino/workshop:pure-r3_model-downloader
     ```
@@ -58,8 +58,8 @@ docker内无法运行VS code之类的代码编辑器GUI, 所以你需要在host�
 ## 退出OpenVINO Docker
 在当前console里运行`$ exit`,即可从Docker环境内退回到host的console<br>
 
-### docker镜像的兼容性测试
-阿里云上的docker image在以下平台上做过测试,运行完好<br>
+### Docker镜像的兼容性测试
+阿里云上的Docker image在以下平台上做过测试,运行完好<br>
 ubuntu 18.04 pass (kernel 4.15)<br>
 centos 7.5.1804 pass (kernel 3.10.0)<br>
 fedora 28 pass(kernel 4.18.9)<br>
