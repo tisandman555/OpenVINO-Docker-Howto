@@ -44,6 +44,10 @@ This repo shows how to use OpenVINO Docker Image on your local host
     此为创建容器时基于的本地docker镜像的名字<br>
     
 到这里,本机就建好OpenVINO Docker的容器,接下来就可以用了<br><br>
+
+## 导入Intel OpenVINO workshop内容
+将Intel OpenVINO workshop的内容包解压缩到本机的/opt/intel/workshop目录下<br>
+
 ## 启动OpenVINO Docker
 每次使用前,首先在host系统里启动一个console, 运行 `$ xhost +local:docker` （允许docker访问host端的display硬件,这样docker内运行workshop里有GUI的应用才能有显示）<br><br>
 运行`$ sudo docker container start openvino-2018r3`,启动前面创建好的容器<br><br>
@@ -52,7 +56,8 @@ This repo shows how to use OpenVINO Docker Image on your local host
 
 
 注意<br>
-docker内无法运行VS code之类的代码编辑器GUI, 所以你需要在host这边用VS code编辑/opt/intel/workshop下的内容, 此目录下的内容会自动在dock对应的目录下更新<br><br>
+1. docker内无法运行VS code之类的代码编辑器GUI, 所以你需要在host这边用VS code编辑/opt/intel/workshop下的内容, 此目录下的内容会自动在dock对应的目录下更新<br><br>
+2. /opt/intel/workshop/smart-video-workshop/object-detection下的tutorial1和ROIViewer 2个应用需要在docker环境内重新编译生成,编译方法见https://github.com/intel-iot-devkit/smart-video-workshop/tree/master/object-detection <br><br>
 
 
 ## 退出OpenVINO Docker
