@@ -71,3 +71,5 @@ fedora 28 pass(kernel 4.18.9)<br>
 ubuntu 16.04.4 pass(kernel 4.13)<br><br>
 UP2 dev kit with ubuntu 16.04.4 pass(kernel 4.13) <br><br>
 在UP2这类凌动处理器平台上使用OpenVINO docker镜像时,需要重新编译docker里openvino的sample, 因为Intel® Celeron™ N3350的CPU不支持AVX,docker里的openvino sample在编译时打开了支持avx的编译参数<br>
+<br>
+*注意:目前此版本mediasdk部分工作不正常<br>
