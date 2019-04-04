@@ -26,9 +26,9 @@ This repo shows how to use OpenVINO Docker Image on your local host
     $ sudo docker load -i [IMG_NAME].tar
     ```
     
-    或者从阿里云上加载(此路径下的镜像内包含了OpenVINO 2018r5版本)<br>
+    或者从阿里云上加载(此路径下的镜像内包含了OpenVINO 2019r1版本)<br>
     ```Bash
-    $ sudo docker pull registry.cn-qingdao.aliyuncs.com/openvino/workshop:2018r5
+    $ sudo docker pull registry.cn-qingdao.aliyuncs.com/openvino/workshop:2019r1
     ```
     这时可以用`sudo docker image ls -a`来看导入的docker镜像的信息
 3. 创建本地容器<br>
