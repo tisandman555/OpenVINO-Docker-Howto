@@ -33,10 +33,10 @@ This repo shows how to use OpenVINO Docker Image on your local host
     这时可以用`sudo docker image ls -a`来看导入的docker镜像的信息
 3. 创建本地容器<br>
 	```Bash
-    $ sudo docker create --net=host --name openvino-2018r5 -it -e DISPLAY=$DISPLAY --privileged -v /dev:/dev -v /opt/intel/workshop:/opt/intel/workshop registry.cn-qingdao.aliyuncs.com/openvino/workshop:2019r1
+    $ sudo docker create --net=host --name openvino-2019r1 -it -e DISPLAY=$DISPLAY --privileged -v /dev:/dev -v /opt/intel/workshop:/opt/intel/workshop registry.cn-qingdao.aliyuncs.com/openvino/workshop:2019r1
     ```
     &ensp;&ensp;参数解释<br>
-    &ensp;&ensp;&ensp;&ensp;--name <font color=#dd0000>openvino-2018r5</font><br>
+    &ensp;&ensp;&ensp;&ensp;--name <font color=#dd0000>openvino-2019r1</font><br>
     &ensp;&ensp;&ensp;&ensp;openvino-2019r1是本地容器的名字,自己随便起<br><br>
     &ensp;&ensp;&ensp;&ensp;-v <font color=#dd0000>/opt/intel/workshop:/opt/intel/workshop</font><br>
     &ensp;&ensp;&ensp;&ensp;将本地host机器目录/opt/intel/workshop挂载到容器内的/opt/intel/workshop目录上<br><br>
