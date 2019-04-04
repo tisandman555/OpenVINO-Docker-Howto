@@ -33,14 +33,14 @@ This repo shows how to use OpenVINO Docker Image on your local host
     这时可以用`sudo docker image ls -a`来看导入的docker镜像的信息
 3. 创建本地容器<br>
 	```Bash
-    $ sudo docker create --net=host --name openvino-2018r5 -it -e DISPLAY=$DISPLAY --privileged -v /dev:/dev -v /opt/intel/workshop:/opt/intel/workshop registry.cn-qingdao.aliyuncs.com/openvino/workshop:2018r5
+    $ sudo docker create --net=host --name openvino-2018r5 -it -e DISPLAY=$DISPLAY --privileged -v /dev:/dev -v /opt/intel/workshop:/opt/intel/workshop registry.cn-qingdao.aliyuncs.com/openvino/workshop:2019r1
     ```
     &ensp;&ensp;参数解释<br>
     &ensp;&ensp;&ensp;&ensp;--name <font color=#dd0000>openvino-2018r5</font><br>
-    &ensp;&ensp;&ensp;&ensp;openvino-2018r5是本地容器的名字,自己随便起<br><br>
+    &ensp;&ensp;&ensp;&ensp;openvino-2019r1是本地容器的名字,自己随便起<br><br>
     &ensp;&ensp;&ensp;&ensp;-v <font color=#dd0000>/opt/intel/workshop:/opt/intel/workshop</font><br>
     &ensp;&ensp;&ensp;&ensp;将本地host机器目录/opt/intel/workshop挂载到容器内的/opt/intel/workshop目录上<br><br>
-    &ensp;&ensp;&ensp;&ensp;<font color=#dd0000>registry.cn-qingdao.aliyuncs.com/openvino/workshop:2018r5</font><br><br>
+    &ensp;&ensp;&ensp;&ensp;<font color=#dd0000>registry.cn-qingdao.aliyuncs.com/openvino/workshop:2019r1</font><br><br>
     此为创建容器时基于的本地docker镜像的名字<br>
     
 到这里,本机就建好OpenVINO Docker的容器,接下来就可以用了<br><br>
@@ -50,8 +50,8 @@ This repo shows how to use OpenVINO Docker Image on your local host
 
 ## 启动OpenVINO Docker
 每次使用前,首先在host系统里启动一个console, 运行 `$ xhost +local:docker` （允许docker访问host端的display硬件,这样docker内运行workshop里有GUI的应用才能有显示）<br><br>
-运行`$ sudo docker container start openvino-2018r5`,启动前面创建好的容器<br><br>
-运行$ `sudo docker attach openvino-2018r5`,把当前console的STDIN/STDOUT挂载到容器上<br><br>
+运行`$ sudo docker container start openvino-2019r1`,启动前面创建好的容器<br><br>
+运行$ `sudo docker attach openvino-2019r1`,把当前console的STDIN/STDOUT挂载到容器上<br><br>
 此时你就可以在这个Docker console里编译运行你的openvino程序了<br><br>
 
 
