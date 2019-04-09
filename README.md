@@ -72,4 +72,12 @@ ubuntu 16.04.4 pass(kernel 4.13)<br><br>
 UP2 dev kit with ubuntu 16.04.4 pass(kernel 4.13) <br><br>
 在UP2这类凌动处理器平台上使用OpenVINO docker镜像时,需要重新编译docker里openvino的sample, 因为Intel® Celeron™ N3350的CPU不支持AVX,docker里的openvino sample在编译时打开了支持avx的编译参数<br>
 <br>
-*注意:目前此版本mediasdk部分工作不正常<br>
+# 镜像列表（建议总是使用最新版本）
+
+| OpenVINO版本 | Image Tag                | Docker仓库地址                                               |
+| ------------ | ------------------------ | ------------------------------------------------------------ |
+| 2019r1       | 2019r1                   | registry.cn-qingdao.aliyuncs.com/openvino/workshop:2019r1    |
+| 2018r5.0.1   | 2018r5.0.1               | registry.cn-qingdao.aliyuncs.com/openvino/workshop:2018r5.0.1 |
+| 2018r5       | 2018r5                   | registry.cn-qingdao.aliyuncs.com/openvino/workshop:2018r5    |
+| 2018r3       | pure-r3_model-downloader | registry.cn-qingdao.aliyuncs.com/openvino/workshop:pure-r3_model-downloader |
+<br>
